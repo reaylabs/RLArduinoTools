@@ -29,6 +29,7 @@ void loop() {
 
 void testByte()
 {
+  //Test byte values
   uint8_t lastValue = 0xFF;
   uint8_t value = 0;
   SerialUSB.println("\nTesting Byte");
@@ -48,6 +49,7 @@ void testByte()
 
 void testInt()
 {
+  //Test integer values
   uint16_t lastValue = 0xFFFF;
   uint16_t value = 0;
   SerialUSB.println("\nTesting Int");
@@ -68,6 +70,7 @@ void testInt()
 
 void testLong()
 {
+  //Test long values
   unsigned long lastValue = 0xFFFFFFFF;
   unsigned long value = 0;
   unsigned long increment = 1;
