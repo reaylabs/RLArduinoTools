@@ -1,8 +1,13 @@
 # Syntax Colouring Map For RLToos
 
 # Data types (KEYWORD1)
+RLArudinoTools KEKYWORD1
 
 # Methods and Functions (KEYWORD2)
 closestPowerOfTwo	KEYWORD2
+startMicrosTimer    KEYWORD2
+stopMicrosTimer     KEYWORD2
+startMillisTimer    KEYWORD2
+stopMillisTimer     KEYWORD2
 
 # Constants (LITERAL1)

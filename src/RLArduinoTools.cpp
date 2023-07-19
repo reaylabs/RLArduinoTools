@@ -6,15 +6,12 @@ Description
 
 Author
   Robert Reay
-
-Revision History
-  10-04-2022 : Initial Code
 */
 
 #include "Arduino.h"
 #include "RLArduinoTools.h"
 
-unsigned long closestPowerOfTwo(unsigned long value)
+unsigned long RLArduinoTools::closestPowerOfTwo(unsigned long value)
 {
   //Return the power of two equal to or greater than the value
   value--;
@@ -36,4 +33,24 @@ unsigned long closestPowerOfTwo(unsigned long value)
   value |= value >> 16; 
   value++;
   return value;
-}
+};
+
+void RLArduinoTools::startMicrosTimer() {
+  // Record the start time
+  _startMicrosTime = micros();
+};
+
+void RLArduinoTools::startMillisTimer() {
+  // Record the start time
+  _startMillisTime = millis();
+};
+
+unsigned long RLArduinoTools::stopMicrosTimer() {
+  unsigned long endTime = micros();
+  return (endTime - _startMicrosTime); 
+};
+
+unsigned long RLArduinoTools::stopMillisTimer() {
+  unsigned long endTime = millis();
+  return  (endTime - _startMillisTime);
+};
