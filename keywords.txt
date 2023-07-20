@@ -1,13 +1,15 @@
-# Syntax Colouring Map For RLToos
+# Syntax Colouring Map For RLArduinoTools
 
 # Data types (KEYWORD1)
 RLArudinoTools KEKYWORD1
 
 # Methods and Functions (KEYWORD2)
-closestPowerOfTwo	KEYWORD2
-startMicrosTimer    KEYWORD2
-stopMicrosTimer     KEYWORD2
-startMillisTimer    KEYWORD2
-stopMillisTimer     KEYWORD2
+closestPowerOfTwo	    KEYWORD2
+startMicrosTimer        KEYWORD2
+stopMicrosTimer         KEYWORD2
+stopMicrosTimerAndPrint KEYWORD2
+startMillisTimer        KEYWORD2
+stopMillisTimer         KEYWORD2
+stopMillisTimerAndPrint KEYWORD2
 
 # Constants (LITERAL1)

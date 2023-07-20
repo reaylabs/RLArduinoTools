@@ -2,7 +2,7 @@
 RLArduinoToolsTest.ino
 
 Description
-  Test of the RLTools closestPowerOfTwo function. 
+  Test of the RLTools class.
 
 Author
   Robert Reay
@@ -16,12 +16,22 @@ RLArduinoTools t;
 void setup() {
   Serial.begin(115200);
   while(!Serial);
+
+  //print the version
+  Serial.print("RLArduinoTools Version: ");
+  Serial.println(t.version());
+
+  //Test the powerOfTwo function
   Serial.println("\nTesting the powerOfTwo function:");
   testByte();
   testInt();
   testLong();
+
+  //Test the execution speed functions
   testMillisSpeed();
   testMicrosSpeed();
+
+  //Testing complete
   Serial.println("\nTesting complete");
 }
 
@@ -99,25 +109,19 @@ void testLong()
 void testMillisSpeed()
 {
   //Test the function speed
-  unsigned long value = 0;
-  Serial.println("Testing Millis Speed");
+  unsigned long time = 0;
+  Serial.println("\nMillis Speed");
   t.startMillisTimer();
-  for (unsigned long i = 0; i < 0xFFFF; i++)
-  {
-    value = t.closestPowerOfTwo(i);
-  }
-  unsigned long time = t.stopMillisTimer();
-  Serial.print("Function Speed: ");
+  delay(100);
+  time = t.stopMillisTimer();
+  Serial.print("Delay(100) Time: ");
   Serial.print(time);
   Serial.println("ms");
 }
 
 void testMicrosSpeed() {
-  Serial.println("Testing Micros Speed");
+  Serial.println("\nMicros Speed Test");
   t.startMicrosTimer();
   delayMicroseconds(100);
-  unsigned long time = t.stopMicrosTimer();
-    Serial.print("Function Speed: ");
-  Serial.print(time);
-  Serial.println("us");
+  t.stopMicrosTimerAndPrint();
 }

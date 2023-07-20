@@ -40,17 +40,33 @@ void RLArduinoTools::startMicrosTimer() {
   _startMicrosTime = micros();
 };
 
+unsigned long RLArduinoTools::stopMicrosTimer() {
+  return (micros() - _startMicrosTime - 2); 
+};
+
+void RLArduinoTools::stopMicrosTimerAndPrint() {
+  unsigned long executionTime = micros() - _startMicrosTime - 2;
+  Serial.print("Execution Time: ");
+  Serial.print(executionTime);
+  Serial.println("us");
+};
+
 void RLArduinoTools::startMillisTimer() {
   // Record the start time
   _startMillisTime = millis();
 };
 
-unsigned long RLArduinoTools::stopMicrosTimer() {
-  unsigned long endTime = micros();
-  return (endTime - _startMicrosTime); 
+unsigned long RLArduinoTools::stopMillisTimer() {
+  return (millis() - _startMillisTime); 
 };
 
-unsigned long RLArduinoTools::stopMillisTimer() {
-  unsigned long endTime = millis();
-  return  (endTime - _startMillisTime);
+void RLArduinoTools::stopMillisTimerAndPrint() {
+  unsigned long executionTime = millis() - _startMillisTime;
+  Serial.print("Execution Time: ");
+  Serial.print(executionTime);
+  Serial.println("ms");
 };
+
+String RLArduinoTools::version() {
+  return _version;
+}
