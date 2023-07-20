@@ -3,8 +3,7 @@ Collection of Arduino helper routines
 
 ## Functions
 ```C++
-//Find the power of two equal to or greater than the value
-
+    //Find the power of two equal to or greater than the value
     unsigned long closestPowerOfTwo(unsigned long value);
 
     //execution time functions
